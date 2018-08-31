@@ -10,11 +10,11 @@
             <ul>
                 <% _.each(rc.d, function(listItem){ %>
                 <li>
-                    <%- listItem.name + " " %>
+                    <%- listItem.name %>
                     <% if (listItem.type === 1) { %>
-                    Ф
+                    <span title="Физическое лицо">Ф</span>
                     <% } else { %>
-                    Ю
+                    <span title="Юридическое лицо">Ю</span>
                     <% } %>
                     <%- listItem.number %>
                 </li>
