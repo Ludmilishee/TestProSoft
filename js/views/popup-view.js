@@ -3,17 +3,15 @@
 
         template: _.template($("#popup").html()),
 
-        model: app.Consumer,
-
         events: {
-            "click .add": "addConsumer"
+            "click .add": "showPopup",
+            "submit .container": "addConsumer"
         },
 
         initialize: function () {
-            $(".modal").click(function () {
+            $(".close").click(function () {
                 $(".modal").css("display", "none");
-            })
-
+            });
         },
 
         render: function () {
@@ -22,9 +20,13 @@
             return this;
         },
 
-        addConsumer: function () {
+        showPopup: function () {
             $(".modal").css("display", "block");
         }
 
+        // addConsumer: function(e){
+        //     this.model.set({id: 100, name: "sss", type: 1, number: "88889"})
+        //     app.consumers.save(this.model);
+        // }
     });
 })(jQuery);

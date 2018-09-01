@@ -9,5 +9,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="backbone.modal-bundled" level="application" />
+    <orderEntry type="library" name="Backbone.ModelBinder" level="application" />
   </component>
 </module>

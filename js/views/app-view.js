@@ -1,4 +1,6 @@
 /* global Backbone, jQuery, _ */
+// TODO: Семантическая вёрстка, LocaleStorage (?), вероятно пересмотреть концепцию вывода таблицы (ч/з ещё одно представление)
+// TODO: Добавить анимацию попапа
 var app = app || {};
 var list;
 
@@ -21,8 +23,9 @@ var typeTitle = {
 
 
         initialize: function() {
-            this.listenTo(app.consumers, "change", this.render);
+            // this.listenTo(app.consumers, "change", this.render);
             this.listenTo(app.consumers, 'sync', this.getData);
+            this.listenTo(app.consumers, 'update', this.getData);
 
             var view = new app.PopupView();
             this.$el.append(view.render().el);
@@ -35,10 +38,11 @@ var typeTitle = {
                     alert('There was some error in loading and processing the JSON file');
                 }
             });
+            this.modelBinder = new Backbone.ModelBinder();
         },
 
         render: function() {
-
+            this.modelBinder.bind(this.model, this.el);
             return this;
         },
 
