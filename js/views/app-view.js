@@ -2,6 +2,11 @@
 var app = app || {};
 var list;
 
+var type = {
+    1 : 'Ф',
+    2 : 'Ю'
+};
+
 var typeTitle = {
     1 : 'Физическое лицо',
     2 : 'Юридическое лицо'
@@ -11,6 +16,9 @@ var typeTitle = {
 
     app.AppView = Backbone.View.extend({
         el: '.content',
+
+        template: _.template($("#consumerTable").html()),
+
         events: {
             "click .icon":          "open",
             "click .button.edit":   "openEditDialog",
@@ -23,7 +31,6 @@ var typeTitle = {
 
             app.consumers.fetch({
                 success: function(data) {
-                    // alert("Success " + JSON.stringify(data));
                     list = data["models"];
                 },
                 error: function(){
@@ -41,15 +48,7 @@ var typeTitle = {
         },
 
         getData: function () {
-            for (var l in list) {
-                var type = list[l].get('type') === 1 ? 'Ф' : 'Ю';
-                this.$el.append('<h5>' +
-                    list[l].get('name') + ' ' +
-                    '<span title="' + typeTitle[list[l].get('type')] + '"</span>' + type + '</span>' + ' ' +
-                    list[l].get('number') +
-                    '</h5>'
-                );
-            }
+            $(this.el).html(this.template({ consumers: list }));
         }
     });
 })(jQuery);

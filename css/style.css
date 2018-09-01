@@ -1,0 +1,25 @@
+/* accent 00adb5 */
+* {
+    font-family: 'Open Sans', sans-serif;
+    background: #eee;
+}
+
+table, th, td {
+    border: 1px solid #bbb;
+    border-collapse: collapse;
+}
+
+table {
+    margin: auto;
+}
+
+th {
+    padding: 15px 10px;
+    background-color: #222831;
+    color: #fff;
+}
+
+td {
+    padding: 5px 15px;
+    background: #fff;
+}

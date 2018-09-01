@@ -4,7 +4,7 @@ var app = app || {};
 (function () {
     var ConsumerList = Backbone.Collection.extend({
         model: app.Consumer,
-        url: "storage/data.json",
+        url: "js/storage/data.json",
 
         parse: function (response) {
 
