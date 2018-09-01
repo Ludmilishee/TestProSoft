@@ -24,11 +24,14 @@
 
         hidePopup: function () {
             $(".modal").css("display", "none");
-        }
+        },
 
-        // addConsumer: function(e){
-        //     this.model.set({id: 100, name: "sss", type: 1, number: "88889"})
-        //     app.consumers.save(this.model);
-        // }
+        addConsumer: function(e){
+            e.preventDefault();
+            //this.model.create({id: 100, name: "sss", type: 1, number: "88889"});
+            app.consumers.push({id: 100, name: "sss", type: 1, phone: "88889"});
+            alert("a " + JSON.stringify(app.consumers));
+            this.hidePopup();
+        }
     });
 })(jQuery);

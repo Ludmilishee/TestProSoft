@@ -19,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="36" />
+            <state relative-caret-position="-188">
+              <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -32,8 +32,8 @@
       <file leaf-file-name="app-view.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/views/app-view.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-69">
-              <caret line="21" column="57" lean-forward="false" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
+            <state relative-caret-position="16">
+              <caret line="24" column="67" lean-forward="false" selection-start-line="24" selection-start-column="67" selection-end-line="24" selection-end-column="67" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -41,11 +41,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="row-view.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/views/row-view.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="11" lean-forward="true" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="popup-view.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/views/popup-view.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+            <state relative-caret-position="441">
+              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="36" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -103,8 +113,9 @@
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/js/collections/consumer-list.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/views/app-view.js" />
         <option value="$PROJECT_DIR$/js/views/popup-view.js" />
+        <option value="$PROJECT_DIR$/js/views/app-view.js" />
+        <option value="$PROJECT_DIR$/js/views/row-view.js" />
       </list>
     </option>
   </component>
@@ -208,22 +219,25 @@
     </option>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html (1)">
+    <configuration name="app-view.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="app-view.js" working-dir="$PROJECT_DIR$/js/views" />
     <configuration name="index.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/TestProSoft/index.html" />
     <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/service-chooser-app/index.html" />
     <configuration name="popup-view.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="popup-view.js" working-dir="$PROJECT_DIR$/js/views" />
     <configuration name="script.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="script.js" working-dir="$PROJECT_DIR$/assets/js" />
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
       <item index="2" class="java.lang.String" itemvalue="Node.js.script.js" />
       <item index="3" class="java.lang.String" itemvalue="Node.js.popup-view.js" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.app-view.js" />
     </list>
     <recent_temporary>
-      <list size="4">
+      <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.popup-view.js" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.script.js" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.app-view.js" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.popup-view.js" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.script.js" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -242,12 +256,12 @@
       <workItem from="1535757070708" duration="3531000" />
       <workItem from="1535794561124" duration="1541000" />
       <workItem from="1535804566128" duration="8853000" />
-      <workItem from="1535817506010" duration="19804000" />
+      <workItem from="1535817506010" duration="22502000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55477000" />
+    <option name="totallyTimeSpent" value="58175000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -370,7 +384,7 @@
         <state relative-caret-position="102">
           <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -414,7 +428,7 @@
         <state relative-caret-position="102">
           <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -458,7 +472,7 @@
         <state relative-caret-position="102">
           <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -518,20 +532,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/storage/data.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/collections/consumer-list.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -544,6 +550,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/storage/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/models/consumer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -552,28 +566,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/popup-view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="36" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/views/app-view.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-69">
-          <caret line="21" column="57" lean-forward="false" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
+        <state relative-caret-position="16">
+          <caret line="24" column="67" lean-forward="false" selection-start-line="24" selection-start-column="67" selection-end-line="24" selection-end-column="67" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/views/popup-view.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        <state relative-caret-position="-188">
+          <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/views/row-view.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="36" />
+        <state relative-caret-position="68">
+          <caret line="4" column="11" lean-forward="true" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
           <folding />
         </state>
       </provider>
