@@ -21,7 +21,6 @@ var typeTitle = {
 
         template: _.template($("#consumerTable").html()),
 
-
         initialize: function() {
             // this.listenTo(app.consumers, "change", this.render);
             this.listenTo(app.consumers, 'sync', this.getData);

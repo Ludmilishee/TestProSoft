@@ -5,13 +5,11 @@
 
         events: {
             "click .add": "showPopup",
+            "click .close": "hidePopup",
             "submit .container": "addConsumer"
         },
 
         initialize: function () {
-            $(".close").click(function () {
-                $(".modal").css("display", "none");
-            });
         },
 
         render: function () {
@@ -22,6 +20,10 @@
 
         showPopup: function () {
             $(".modal").css("display", "block");
+        },
+
+        hidePopup: function () {
+            $(".modal").css("display", "none");
         }
 
         // addConsumer: function(e){
