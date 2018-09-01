@@ -19,15 +19,13 @@ var typeTitle = {
 
         template: _.template($("#consumerTable").html()),
 
-        events: {
-            "click .icon":          "open",
-            "click .button.edit":   "openEditDialog",
-            "click .button.delete": "destroy"
-        },
 
         initialize: function() {
             this.listenTo(app.consumers, "change", this.render);
             this.listenTo(app.consumers, 'sync', this.getData);
+
+            var view = new app.PopupView();
+            this.$el.append(view.render().el);
 
             app.consumers.fetch({
                 success: function(data) {
@@ -41,14 +39,11 @@ var typeTitle = {
 
         render: function() {
 
-
-            // Returning the object is a good practice
-            // that makes chaining possible
             return this;
         },
 
         getData: function () {
-            $(this.el).html(this.template({ consumers: list }));
+            $(this.el).append(this.template({ consumers: list }));
         }
     });
 })(jQuery);
