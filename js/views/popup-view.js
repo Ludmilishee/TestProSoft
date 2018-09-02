@@ -1,3 +1,5 @@
+var app = app || {};
+
 (function ($) {
     app.PopupView = Backbone.View.extend({
 

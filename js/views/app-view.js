@@ -18,12 +18,11 @@ var typeTitle = {
     app.AppView = Backbone.View.extend({
         el: '.content',
 
-        template: _.template($("#consumerTable").html()),
-
+        // template: _.template($("#consumerTable").html()),
 
         initialize: function() {
             // this.listenTo(app.consumers, "change", this.render);
-            this.listenTo(app.consumers, 'add', this.getData);
+            this.listenTo(app.consumers, 'add', this.addRow);
 
             var view = new app.PopupView();
             this.$el.append(view.render().el);
@@ -42,9 +41,14 @@ var typeTitle = {
             this.modelBinder.bind(this.model, this.el);
         },
 
-        getData: function () {
-            alert('upd');
-            $(this.el).append(this.template({ consumers: app.consumers["models"] }));
+        // getData: function () {
+        //     alert('upd');
+        //     $(this.el).append(this.template({ consumers: app.consumers["models"] }));
+        // }
+
+        addRow: function (consumer) {
+            var view = new app.RowView({ model: consumer });
+            $(this.el).append(view.render().el);
         }
     });
 })(jQuery);

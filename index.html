@@ -8,22 +8,12 @@
 </head>
 <body>
     <div class="content"></div>
-    <script type="text/template" id="consumerTable">
-        <table>
-            <tr>
-                <th>ФИО</th>
-                <th>Тип</th>
-                <th>Номер</th>
-            </tr>
-            <% _.each(consumers, function(item) { %>
-            <tr>
-                <td><%= item.get('name') %></td>
-                <td title=" <%= typeTitle[item.get('type')] %> "> <%= type[item.get('type')] %> </td>
-                <td><%= item.get('phone') %></td>
-            </tr>
-            <% }); %>
-        </table>
-    </script>
+
+
+        <script type="text/template" id="consumerRow">
+
+
+        </script>
 
     <script type="text/template" id="popup">
         <button class="btn add">Добавить потребителя</button>
@@ -52,6 +42,8 @@
     <script src="js/app.js"></script>
     <script src="js/views/app-view.js"></script>
     <script src="js/views/popup-view.js"></script>
+    <script src="js/views/table-view.js"></script>
+    <script src="js/views/row-view.js"></script>
     <script src="js/models/consumer.js"></script>
     <script src="js/collections/consumer-list.js"></script>
 </body>
