@@ -2,12 +2,10 @@ var app = app || {};
 
 (function ($) {
     app.RowView = Backbone.View.extend({
-
-
         template: _.template("<tr>"+
-            "<td class='name'><%= name %></td>"+
-            "<td class='age'><%= type %></td>"+
-            "<td class='phone'><%= phone %></td>"+
+            "<td><%= name %></td>"+
+            "<td><%= type %></td>"+
+            "<td><%= phone %></td>"+
             "</tr>"),
 
         initialize: function () {
@@ -15,9 +13,9 @@ var app = app || {};
         },
 
         render: function () {
-            $(this.el).html(this.template(this.model.toJSON()));
+            var html = this.template(this.model.toJSON());
+            this.setElement( $(html) );
             return this;
         }
-
     });
 })(jQuery);

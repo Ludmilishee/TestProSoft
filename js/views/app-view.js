@@ -22,7 +22,7 @@ var typeTitle = {
 
         initialize: function() {
             // this.listenTo(app.consumers, "change", this.render);
-            this.listenTo(app.consumers, 'add', this.addRow);
+            this.listenTo(app.consumers, 'sync', this.initCollection);
 
             var view = new app.PopupView();
             this.$el.append(view.render().el);
@@ -46,9 +46,9 @@ var typeTitle = {
         //     $(this.el).append(this.template({ consumers: app.consumers["models"] }));
         // }
 
-        addRow: function (consumer) {
-            var view = new app.RowView({ model: consumer });
-            $(this.el).append(view.render().el);
+        initCollection: function () {
+            var tableView = new app.TableView({ collection: app.consumers });
+            this.$el.append(tableView.render().$el);
         }
     });
 })(jQuery);
