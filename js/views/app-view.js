@@ -3,7 +3,7 @@
 // TODO: Добавить анимацию попапа
 var app = app || {};
 
-var type = {
+var consumerType = {
     1 : 'Ф',
     2 : 'Ю'
 };
@@ -18,7 +18,7 @@ var typeTitle = {
     app.AppView = Backbone.View.extend({
         el: '.content',
 
-        // template: _.template($("#consumerTable").html()),
+        template: _.template($("#consumerTable").html()),
 
         initialize: function() {
             this.listenTo(app.consumers, 'sync', this.initCollection);
@@ -35,7 +35,7 @@ var typeTitle = {
 
         initCollection: function () {
             var tableView = new app.TableView({ collection: app.consumers });
-            this.$el.append(tableView.render().$el);
+            $('#consumerTable').append(tableView.render().$el);
         }
     });
 })(jQuery);

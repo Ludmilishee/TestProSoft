@@ -2,7 +2,7 @@ var app = app || {};
 
 (function ($) {
     app.TableView = Backbone.View.extend({
-        tagName: 'table',
+        tagName: 'tbody',
 
         initialize : function() {
             _.bindAll(this,'render','renderOne');

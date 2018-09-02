@@ -2,10 +2,10 @@ var app = app || {};
 
 (function ($) {
     app.RowView = Backbone.View.extend({
-        template: _.template("<tr>"+
-            "<td><%= name %></td>"+
-            "<td><%= type %></td>"+
-            "<td><%= phone %></td>"+
+        template: _.template("<tr>" +
+            "<td ><%= name %></td>" +
+            "<td title=\" <%= typeTitle[type] %> \"><%= consumerType[type] %></td>" +
+            "<td><%= phone %></td>" +
             "</tr>"),
 
         initialize: function () {
