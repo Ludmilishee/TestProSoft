@@ -1,3 +1,4 @@
+/* global Backbone, jQuery, _ */
 var app = app || {};
 
 (function ($) {
@@ -15,7 +16,7 @@ var app = app || {};
         },
 
         renderOne: function(model) {
-            var row = new app.RowView({ model: model });
+            let row = new app.RowView({model: model});
             this.$el.append(row.render().$el);
             return this;
         }

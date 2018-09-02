@@ -3,14 +3,14 @@
 // TODO: Добавить анимацию попапа, hover на кнопки
 var app = app || {};
 
-var consumerType = {
-    1 : 'Ф',
-    2 : 'Ю'
+let consumerType = {
+    1: 'Ф',
+    2: 'Ю'
 };
 
-var typeTitle = {
-    1 : 'Физическое лицо',
-    2 : 'Юридическое лицо'
+let typeTitle = {
+    1: 'Физическое лицо',
+    2: 'Юридическое лицо'
 };
 
 (function ($) {

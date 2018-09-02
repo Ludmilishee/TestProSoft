@@ -11,6 +11,7 @@ table, th, td {
 
 table {
     margin: auto;
+    border: none;
 }
 
 th {
@@ -23,6 +24,29 @@ td {
     padding: 5px 15px;
     background: #fff;
     color: #222831;
+    height: 20px;
+}
+
+.tool {
+    width: inherit;
+    background: #eee;
+    border: none;
+    padding: 0;
+}
+
+.tool img {
+    opacity: 0;
+    height: 100%;
+    margin: 5px 7px;
+}
+
+tr:hover .tool img:hover {
+    opacity: 1;
+}
+
+tr:hover .tool img {
+    opacity: .5;
+    cursor: pointer;
 }
 
 .modal {

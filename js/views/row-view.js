@@ -1,3 +1,4 @@
+/* global Backbone, jQuery, _ */
 var app = app || {};
 
 (function ($) {
@@ -6,7 +7,10 @@ var app = app || {};
             '<td ><%= name %></td>' +
             '<td title=\" <%= typeTitle[type] %> \"><%= consumerType[type] %></td>' +
             '<td><%= phone %></td>' +
-            '</tr>'),
+            '<td class="tool">' +
+            '<img class="edit" src="img/pencil.png">' +
+            '<img class="delete" src="img/cancel.png">' +
+            '</td></tr>'),
 
         initialize: function () {},
 
