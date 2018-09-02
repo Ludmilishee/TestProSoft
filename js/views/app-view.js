@@ -1,6 +1,6 @@
 /* global Backbone, jQuery, _ */
-// TODO: Семантическая вёрстка, LocaleStorage (?), вероятно пересмотреть концепцию вывода таблицы (ч/з ещё одно представление)
-// TODO: Добавить анимацию попапа
+// TODO: Семантическая вёрстка, LocaleStorage (?)
+// TODO: Добавить анимацию попапа, hover на кнопки
 var app = app || {};
 
 var consumerType = {
@@ -18,7 +18,7 @@ var typeTitle = {
     app.AppView = Backbone.View.extend({
         el: '.content',
 
-        template: _.template($("#consumerTable").html()),
+        template: _.template($('#consumerTable').html()),
 
         initialize: function() {
             this.listenTo(app.consumers, 'sync', this.initCollection);
@@ -26,7 +26,12 @@ var typeTitle = {
             var view = new app.PopupView();
             this.$el.append(view.render().el);
 
-            app.consumers.fetch();
+            app.consumers.fetch({
+                success: function(data) {},
+                error: function(){
+                    alert('There was some error in loading and processing the JSON file');
+                }
+            });
         },
 
         render: function() {

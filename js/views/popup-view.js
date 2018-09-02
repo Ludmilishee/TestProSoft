@@ -2,7 +2,7 @@ var app = app || {};
 
 (function ($) {
     app.PopupView = Backbone.View.extend({
-        template: _.template($("#popup").html()),
+        template: _.template($('#popup').html()),
 
         events: {
             "click .add": "showPopup",
@@ -10,8 +10,7 @@ var app = app || {};
             "submit .container": "addConsumer"
         },
 
-        initialize: function () {
-        },
+        initialize: function () {},
 
         render: function () {
             this.$el.html(this.template());
@@ -20,17 +19,20 @@ var app = app || {};
         },
 
         showPopup: function () {
-            $(".modal").css("display", "block");
+            $('.modal').css('display', 'block');
         },
 
         hidePopup: function () {
-            $(".modal").css("display", "none");
+            $('.modal').css('display', 'none');
         },
 
         addConsumer: function(e){
             e.preventDefault();
-            var cons = new app.Consumer({id: 100, name: "sss", type: 1, phone: "88889"});
-            app.consumers.add(cons);
+            // var cons = new app.Consumer({id: 100, name: "sss", type: 1, phone: "88889"});
+            var arr = this.$el.serializeArray();
+            alert(arr);
+
+            //app.consumers.add(cons);
             this.hidePopup();
         }
     });

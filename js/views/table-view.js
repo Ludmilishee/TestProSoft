@@ -4,7 +4,7 @@ var app = app || {};
     app.TableView = Backbone.View.extend({
         tagName: 'tbody',
 
-        initialize : function() {
+        initialize: function() {
             _.bindAll(this,'render','renderOne');
             app.consumers.on('add', this.renderOne);
         },
@@ -14,7 +14,7 @@ var app = app || {};
             return this;
         },
 
-        renderOne : function(model) {
+        renderOne: function(model) {
             var row = new app.RowView({ model: model });
             this.$el.append(row.render().$el);
             return this;
