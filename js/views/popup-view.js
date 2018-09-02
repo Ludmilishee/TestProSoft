@@ -10,11 +10,10 @@ var app = app || {};
             "submit .container": "addConsumer"
         },
 
-        initialize: function () {},
+        initialize: function () {  },
 
         render: function () {
             this.$el.html(this.template());
-
             return this;
         },
 
@@ -26,13 +25,23 @@ var app = app || {};
             $('.modal').css('display', 'none');
         },
 
+        resetPopup: function () {
+            $('.container')[0].reset();
+        },
+
         addConsumer: function(e){
             e.preventDefault();
-            // var cons = new app.Consumer({id: 100, name: "sss", type: 1, phone: "88889"});
-            var arr = this.$el.serializeArray();
-            alert(arr);
 
-            //app.consumers.add(cons);
+            let cons = new app.Consumer({
+                id: app.counter.idInd,
+                name: $('#name').val(),
+                type: $('#type').val(),
+                phone: $('#phone').val()
+            });
+
+            app.consumers.add(cons);
+
+            this.resetPopup();
             this.hidePopup();
         }
     });
