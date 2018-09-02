@@ -69,13 +69,18 @@ td {
     color: #777;
 }
 
-.modal-content input {
+.modal-content input,
+.modal-content select {
     margin-bottom: 10px;
     width: 100%;
     padding: 10px;
     border: none;
     border-radius: 4px;
     color: #222831;
+}
+
+.modal-content select {
+    width: auto;
 }
 
 .modal-content input:focus {
