@@ -6,6 +6,7 @@ var app = app || {};
 
         initialize : function() {
             _.bindAll(this,'render','renderOne');
+            app.consumers.on('add', this.renderOne);
         },
 
         render: function() {

@@ -21,30 +21,17 @@ var typeTitle = {
         // template: _.template($("#consumerTable").html()),
 
         initialize: function() {
-            // this.listenTo(app.consumers, "change", this.render);
             this.listenTo(app.consumers, 'sync', this.initCollection);
 
             var view = new app.PopupView();
             this.$el.append(view.render().el);
 
-            app.consumers.fetch({
-                success: function() {},
-                error: function(){
-                    alert('There was some error in loading and processing the JSON file');
-                }
-            });
-            this.modelBinder = new Backbone.ModelBinder();
+            app.consumers.fetch();
         },
 
         render: function() {
-            alert('render');
-            this.modelBinder.bind(this.model, this.el);
+            return this;
         },
-
-        // getData: function () {
-        //     alert('upd');
-        //     $(this.el).append(this.template({ consumers: app.consumers["models"] }));
-        // }
 
         initCollection: function () {
             var tableView = new app.TableView({ collection: app.consumers });

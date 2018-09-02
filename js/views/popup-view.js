@@ -30,7 +30,8 @@ var app = app || {};
         addConsumer: function(e){
             e.preventDefault();
             //this.model.create({id: 100, name: "sss", type: 1, number: "88889"});
-            app.consumers.push({id: 100, name: "sss", type: 1, phone: "88889"});
+            var cons = new app.Consumer({id: 100, name: "sss", type: 1, phone: "88889"});
+            app.consumers.add(cons);
             alert("a " + JSON.stringify(app.consumers));
             this.hidePopup();
         }
