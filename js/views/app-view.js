@@ -29,8 +29,6 @@ var view;
         initialize: function() {
             this.listenTo(app.consumers, 'sync', this.initCollection);
 
-
-
             app.consumers.fetch({
                 success: function(data) {
                     app.counter.idInd = data["models"][data.length - 1].get('id');
@@ -51,7 +49,8 @@ var view;
         },
 
         initCollection: function () {
-            $('#consumerTable').append(app.Grid.render().el);
+            let tableView = new app.TableView({ collection: app.consumers });
+            $('#consumerTable').append(tableView.render().$el);
         }
     });
 })(jQuery);

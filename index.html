@@ -26,17 +26,17 @@
         <div class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <h1>Добавить потребителя</h1>
+                <h1><% if (this.model) { print('Изменить') } else { print('Добавить') } %> потребителя</h1>
                 <form class="container">
                     <label for="name">Имя</label>
-                    <input id="name" type="text" value=" <% if (this.model !== undefined) { print(this.model.get('name')) } %>">
+                    <input id="name" type="text" value="<% if (this.model !== undefined) { print(this.model.get('name')) } %>">
                     <label for="type">Тип</label>
                     <select id="type" type="number">
-                        <option value="1">Физическое лицо</option>
-                        <option value="2">Юридическое лицо</option>
+                        <option value="1"  <% if (this.model && this.model.get('type') === 1) { print('selected') } %> >Физическое лицо</option>
+                        <option value="2" <% if (this.model && this.model.get('type') === 2) { print('selected') } %> >Юридическое лицо</option>
                     </select>
                     <label for="phone">Номер</label>
-                    <input id="phone" type="text" value=" <% if (this.model !== undefined) { print(this.model.get('phone')) } %>">
+                    <input id="phone" type="text" value="<% if (this.model !== undefined) { print(this.model.get('phone')) } %>">
                     <br><br>
                     <button type="submit" class="btn">Добавить</button>
                 </form>

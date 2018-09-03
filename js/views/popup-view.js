@@ -24,14 +24,25 @@ var app = app || {};
         addConsumer: function(e){
             e.preventDefault();
 
-            let cons = new app.Consumer({
-                id: app.counter.idInd,
-                name: $('#name').val(),
-                type: $('#type').val(),
-                phone: $('#phone').val()
-            });
 
-            app.consumers.add(cons);
+            if (this.model) {
+                let cons = new app.Consumer({
+                    id: this.model.get('id'),
+                    name: $('#name').val(),
+                    type: $('#type').val(),
+                    phone: $('#phone').val()
+                });
+                app.consumers.set(cons);
+            } else {
+                let cons = new app.Consumer({
+                    id: app.counter.idInd,
+                    name: $('#name').val(),
+                    type: $('#type').val(),
+                    phone: $('#phone').val()
+                });
+                app.consumers.set(cons);
+            }
+
             this.hidePopup();
         }
     });
