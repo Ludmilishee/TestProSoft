@@ -1,6 +1,6 @@
 /* global Backbone, jQuery, _ */
 // TODO: Семантическая вёрстка, LocaleStorage (?)
-// TODO: Добавить анимацию попапа, hover на кнопки
+// TODO: Добавить анимацию попапа, hover на кнопки, Двусторонняя привязка
 var app = app || {};
 
 let consumerType = {
@@ -13,6 +13,8 @@ let typeTitle = {
     2: 'Юридическое лицо'
 };
 
+var view;
+
 (function ($) {
 
     app.AppView = Backbone.View.extend({
@@ -20,11 +22,14 @@ let typeTitle = {
 
         template: _.template($('#consumerTable').html()),
 
+        events: {
+            "click .add": "showPopup"
+        },
+
         initialize: function() {
             this.listenTo(app.consumers, 'sync', this.initCollection);
 
-            var view = new app.PopupView({ model: app.Consumer });
-            this.$el.append(view.render().el);
+
 
             app.consumers.fetch({
                 success: function(data) {
@@ -40,9 +45,13 @@ let typeTitle = {
             return this;
         },
 
+        showPopup: function () {
+            view = new app.PopupView();
+            this.$el.append(view.render().el);
+        },
+
         initCollection: function () {
-            var tableView = new app.TableView({ collection: app.consumers });
-            $('#consumerTable').append(tableView.render().$el);
+            $('#consumerTable').append(app.Grid.render().el);
         }
     });
 })(jQuery);

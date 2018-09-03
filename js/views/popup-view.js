@@ -6,28 +6,19 @@ var app = app || {};
         template: _.template($('#popup').html()),
 
         events: {
-            "click .add": "showPopup",
             "click .close": "hidePopup",
             "submit .container": "addConsumer"
         },
 
-        initialize: function () {  },
+        initialize: function () {},
 
         render: function () {
             this.$el.html(this.template());
             return this;
         },
 
-        showPopup: function () {
-            $('.modal').css('display', 'block');
-        },
-
         hidePopup: function () {
-            $('.modal').css('display', 'none');
-        },
-
-        resetPopup: function () {
-            $('.container')[0].reset();
+            this.remove();
         },
 
         addConsumer: function(e){
@@ -41,8 +32,6 @@ var app = app || {};
             });
 
             app.consumers.add(cons);
-
-            this.resetPopup();
             this.hidePopup();
         }
     });

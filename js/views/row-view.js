@@ -12,12 +12,23 @@ var app = app || {};
             '<img class="delete" src="img/cancel.png">' +
             '</td></tr>'),
 
-        initialize: function () {},
+        events: {
+            "click .edit": "showPopup",
+            "submit .container": "addConsumer"
+        },
+
+        initialize: function () { },
 
         render: function () {
-            var html = this.template(this.model.toJSON());
+            let html = this.template(this.model.toJSON());
             this.setElement( $(html) );
             return this;
+        },
+
+        showPopup: function () {
+            view = new app.PopupView({model: new app.Consumer({id: 100, name: "ss", type: 1, phone: "222"}) });
+            this.$el.append(view.render().el);
+            $('#type').val("2");
         }
     });
 })(jQuery);

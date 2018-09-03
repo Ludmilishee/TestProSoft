@@ -5,9 +5,14 @@ var app = app || {};
     app.TableView = Backbone.View.extend({
         tagName: 'tbody',
 
+        events: {
+            "click .edit": "func"
+        },
+
         initialize: function() {
-            _.bindAll(this,'render','renderOne');
+            _.bindAll(this, 'render', 'renderOne');
             app.consumers.on('add', this.renderOne);
+
         },
 
         render: function() {
@@ -19,6 +24,10 @@ var app = app || {};
             let row = new app.RowView({model: model});
             this.$el.append(row.render().$el);
             return this;
+        },
+
+        func: function (data) {
+            alert(data);
         }
     });
 })(jQuery);
