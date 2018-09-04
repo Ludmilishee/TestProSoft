@@ -8,7 +8,16 @@
 </head>
 <body>
     <div class="content">
-        <button class="btn add">Добавить потребителя</button>
+
+        <div class="filter-tool">
+            <button class="btn add">Добавить потребителя</button>
+            <select class="filter">
+                <option value="0" selected disabled>Фильтр</option>
+                <option value="1">Физическое лицо</option>
+                <option value="2">Юридическое лицо</option>
+            </select>
+            <button class="reset">&times;</button>
+        </div>
     </div>
 
     <table id="consumerTable">
@@ -22,7 +31,6 @@
     </table>
 
     <script type="text/template" id="popup">
-
         <div class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
@@ -31,14 +39,15 @@
                     <label for="name">Имя</label>
                     <input id="name" type="text" value="<% if (this.model !== undefined) { print(this.model.get('name')) } %>">
                     <label for="type">Тип</label>
-                    <select id="type" type="number">
+                    <select id="type">
                         <option value="1"  <% if (this.model && this.model.get('type') === 1) { print('selected') } %> >Физическое лицо</option>
                         <option value="2" <% if (this.model && this.model.get('type') === 2) { print('selected') } %> >Юридическое лицо</option>
                     </select>
                     <label for="phone">Номер</label>
                     <input id="phone" type="text" value="<% if (this.model !== undefined) { print(this.model.get('phone')) } %>">
                     <br><br>
-                    <button type="submit" class="btn">Добавить</button>
+                    <button type="submit" class="btn submit">Добавить</button>
+                    <h1 class="err"></h1>
                 </form>
             </div>
         </div>
@@ -48,6 +57,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.modelbinder/1.1.0/Backbone.ModelBinder.min.js"></script>
+    <script src="lib/backbone-filtered-collection.js"></script>
     <script src="server-data/id-counter.js"></script>
     <script src="js/app.js"></script>
     <script src="js/views/app-view.js"></script>

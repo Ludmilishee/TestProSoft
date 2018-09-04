@@ -35,7 +35,7 @@ var app = app || {};
         },
 
         deleteRow: function () {
-            app.consumers.remove(this.model);
+            app.consumers.superset().remove(this.model);
             this.remove();
         }
     });

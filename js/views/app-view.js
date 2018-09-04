@@ -1,6 +1,6 @@
 /* global Backbone, jQuery, _ */
-// TODO: Семантическая вёрстка, LocaleStorage (?)
-// TODO: Добавить анимацию попапа, hover на кнопки, Двусторонняя привязка
+// TODO: Семантическая вёрстка
+// TODO: Добавить анимацию попапа, Двусторонняя привязка
 var app = app || {};
 
 let consumerType = {
@@ -13,8 +13,6 @@ let typeTitle = {
     2: 'Юридическое лицо'
 };
 
-var view;
-
 (function ($) {
 
     app.AppView = Backbone.View.extend({
@@ -23,34 +21,49 @@ var view;
         template: _.template($('#consumerTable').html()),
 
         events: {
-            "click .add": "showPopup"
+            "click .add": "showPopup",
+            "change .filter": "filterCol",
+            "click .reset": "resetCol"
         },
 
         initialize: function() {
-            this.listenTo(app.consumers, 'sync', this.initCollection);
+            this.listenTo(app.consumersOrigin, 'sync', this.initCollection);
 
-            app.consumers.fetch({
+            app.consumersOrigin.fetch({
                 success: function(data) {
                     app.counter.idInd = data["models"][data.length - 1].get('id');
+                    app.consumers = new FilteredCollection(app.consumersOrigin);
                 },
-                error: function(){
+                error: function() {
                     alert('There was some error in loading and processing the JSON file');
                 }
             });
         },
 
-        render: function() {
-            return this;
+        filterCol: function () {
+            let value = parseInt($('.filter').val());
+            if (value !== 0) {
+                app.consumers.filterBy('type', { type: value });
+                app.tableView.remove();
+                this.initCollection();
+            }
+        },
+
+        resetCol: function () {
+            app.consumers.resetFilters();
+            app.tableView.remove();
+            this.initCollection();
+            $(".filter").val('0');
         },
 
         showPopup: function () {
-            view = new app.PopupView();
+            let view = new app.PopupView();
             this.$el.append(view.render().el);
         },
 
         initCollection: function () {
-            let tableView = new app.TableView({ collection: app.consumers });
-            $('#consumerTable').append(tableView.render().$el);
+            app.tableView = new app.TableView({ collection: app.consumers });
+            $('#consumerTable').append(app.tableView.render().$el);
         }
     });
 })(jQuery);

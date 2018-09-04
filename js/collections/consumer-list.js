@@ -13,6 +13,5 @@ var app = app || {};
         }
     });
 
-    app.consumers = new ConsumerList();
-
+    app.consumersOrigin = new ConsumerList();
 })();

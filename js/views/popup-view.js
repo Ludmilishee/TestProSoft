@@ -24,26 +24,30 @@ var app = app || {};
         addConsumer: function(e){
             e.preventDefault();
 
+            let cons;
+
             if (this.model) {
-                let cons = new app.Consumer({
+                cons = new app.Consumer({
                     id: this.model.get('id'),
                     name: $('#name').val(),
-                    type: $('#type').val(),
+                    type: parseInt($('#type').val()),
                     phone: $('#phone').val()
                 });
-                app.consumers.add(cons, {merge: true});
             } else {
-                let cons = new app.Consumer({
+                cons = new app.Consumer({
                     id: app.counter.idInd,
                     name: $('#name').val(),
-                    type: $('#type').val(),
+                    type: parseInt($('#type').val()),
                     phone: $('#phone').val()
                 });
-                app.consumers.add(cons);
             }
 
-            console.log(app.consumers);
-            this.hidePopup();
+            if (cons.isValid()) {
+                app.consumers.superset().add(cons, {merge: true});
+                this.hidePopup();
+            } else {
+                $('.err').html(cons.validationError);
+            }
         }
     });
 })(jQuery);

@@ -16,7 +16,7 @@ var app = app || {};
         },
 
         renderOne: function(model) {
-            let row = new app.RowView({model: model});
+            let row = new app.RowView({ model: model });
             this.$el.append(row.render().$el);
             return this;
         }
