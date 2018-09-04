@@ -5,13 +5,7 @@ var app = app || {};
     app.RowView = Backbone.View.extend({
         tagName: 'tr',
 
-        template: _.template('<td ><%= name %></td>' +
-            '<td title=\" <%= typeTitle[type] %> \"><%= consumerType[type] %></td>' +
-            '<td><%= phone %></td>' +
-            '<td class="tool">' +
-            '<img class="edit" src="img/pencil.png">' +
-            '<img class="delete" src="img/cancel.png">' +
-            '</td>'),
+        template: _.template($('#row').html()),
 
         events: {
             "click .edit": "showPopup",

@@ -28,6 +28,15 @@
                 <th>Номер</th>
             </tr>
         </thead>
+        <script type="text/template" id="row">
+            <td ><%= name %></td>
+            <td title="<%= typeTitle[type] %>"><%= consumerType[type] %></td>
+            <td><%= phone %></td>
+            <td class="tool">
+                <img class="edit" src="img/pencil.png">
+                <img class="delete" src="img/cancel.png">
+            </td>
+        </script>
     </table>
 
     <script type="text/template" id="popup">
