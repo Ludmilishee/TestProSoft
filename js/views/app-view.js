@@ -1,6 +1,4 @@
 /* global Backbone, jQuery, _ */
-// TODO: Семантическая вёрстка, LocaleStorage (?)
-// TODO: Добавить анимацию попапа, hover на кнопки, Двусторонняя привязка
 var app = app || {};
 
 let consumerType = {
@@ -12,8 +10,6 @@ let typeTitle = {
     1: 'Физическое лицо',
     2: 'Юридическое лицо'
 };
-
-var view;
 
 (function ($) {
 
@@ -58,7 +54,7 @@ var view;
         },
 
         showPopup: function () {
-            view = new app.PopupView();
+            let view = new app.PopupView();
             this.$el.append(view.render().el);
         },
 
