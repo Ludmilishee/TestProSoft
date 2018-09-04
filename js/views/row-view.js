@@ -3,14 +3,15 @@ var app = app || {};
 
 (function ($) {
     app.RowView = Backbone.View.extend({
-        template: _.template('<tr>' +
-            '<td ><%= name %></td>' +
+        tagName: 'tr',
+
+        template: _.template('<td ><%= name %></td>' +
             '<td title=\" <%= typeTitle[type] %> \"><%= consumerType[type] %></td>' +
             '<td><%= phone %></td>' +
             '<td class="tool">' +
             '<img class="edit" src="img/pencil.png">' +
             '<img class="delete" src="img/cancel.png">' +
-            '</td></tr>'),
+            '</td>'),
 
         events: {
             "click .edit": "showPopup",
@@ -23,7 +24,6 @@ var app = app || {};
 
         render: function () {
             let html = this.template(this.model.toJSON());
-            // this.setElement( $(html) );
             this.$el.html(html);
             return this;
         },
