@@ -24,7 +24,6 @@ var app = app || {};
         addConsumer: function(e){
             e.preventDefault();
 
-
             if (this.model) {
                 let cons = new app.Consumer({
                     id: this.model.get('id'),
@@ -32,7 +31,7 @@ var app = app || {};
                     type: $('#type').val(),
                     phone: $('#phone').val()
                 });
-                app.consumers.set(cons);
+                app.consumers.add(cons, {merge: true});
             } else {
                 let cons = new app.Consumer({
                     id: app.counter.idInd,
@@ -40,9 +39,10 @@ var app = app || {};
                     type: $('#type').val(),
                     phone: $('#phone').val()
                 });
-                app.consumers.set(cons);
+                app.consumers.add(cons);
             }
 
+            console.log(app.consumers);
             this.hidePopup();
         }
     });

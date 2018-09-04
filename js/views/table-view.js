@@ -7,11 +7,12 @@ var app = app || {};
 
         initialize: function() {
             _.bindAll(this, 'render', 'renderOne');
-            app.consumers.on('add', this.renderOne);
+            this.collection.on('add', this.renderOne);
         },
 
         render: function() {
             this.collection.each(this.renderOne);
+            console.log(this.collection);
             return this;
         },
 

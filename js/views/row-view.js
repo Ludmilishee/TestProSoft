@@ -17,18 +17,20 @@ var app = app || {};
             "submit .container": "addConsumer"
         },
 
-        initialize: function () { this.model.on('change', this.render, this); },
+        initialize: function () {
+            this.model.on('change', this.render, this);
+        },
 
         render: function () {
-            console.log('render row');
             let html = this.template(this.model.toJSON());
-            this.setElement( $(html) );
+            // this.setElement( $(html) );
+            this.$el.html(html);
             return this;
         },
 
         showPopup: function () {
             view = new app.PopupView({ model: this.model });
-            this.$el.append(view.render().el);
+            this.$el.append(view.render().$el);
         }
     });
 })(jQuery);
