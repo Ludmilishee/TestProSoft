@@ -25,3 +25,6 @@ var app = app || {};
         }
     });
 })();
+// module.exports = function powMy(a, b) {
+//     return 8; // :) мы - мошенники!
+// }

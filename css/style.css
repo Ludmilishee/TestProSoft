@@ -1,6 +1,9 @@
 * {
     font-family: 'Open Sans', sans-serif;
     font-size: 12pt;
+}
+
+body {
     background: #eee;
 }
 
@@ -22,7 +25,6 @@ th {
 
 td {
     padding: 5px 15px;
-    background: #fff;
     color: #333e49;
     height: 20px;
 }
@@ -75,7 +77,6 @@ tr:hover .tool img {
     padding: 10px 20px 0 20px;
     border: 1px solid #bbb;
     width: 40%;
-    background: #fff;
 }
 
 .close {
@@ -83,7 +84,6 @@ tr:hover .tool img {
     float: right;
     font-size: 28px;
     font-weight: bold;
-    background: #fff;
 }
 
 .close:hover,
@@ -95,7 +95,6 @@ tr:hover .tool img {
 
 .modal-content label {
     display: block;
-    background: #fff;
     margin-bottom: 2px;
     font-size: 11pt;
     color: #777;
@@ -142,7 +141,6 @@ tr:hover .tool img {
 .filter {
     display: inline-block;
     vertical-align: middle;
-    background: #fff;
     margin: 0;
 }
 
@@ -156,6 +154,7 @@ tr:hover .tool img {
     color: #333e49;
     outline: none;
     opacity: .5;
+    background: #fff;
 }
 
 .reset:hover {
@@ -165,7 +164,6 @@ tr:hover .tool img {
 .container {
     margin: auto;
     width: 60%;
-    background: #fff;
     padding: 10px 0;
 }
 
@@ -189,7 +187,6 @@ tr:hover .tool img {
 }
 
 h1 {
-    background: #fff;
     text-align: center;
     width: 60%;
     margin: 10px auto;

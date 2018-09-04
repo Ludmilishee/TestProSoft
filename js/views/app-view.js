@@ -1,6 +1,6 @@
 /* global Backbone, jQuery, _ */
-// TODO: Семантическая вёрстка
-// TODO: Добавить анимацию попапа, Двусторонняя привязка
+// TODO: Семантическая вёрстка, LocaleStorage (?)
+// TODO: Добавить анимацию попапа, hover на кнопки, Двусторонняя привязка
 var app = app || {};
 
 let consumerType = {
@@ -12,6 +12,8 @@ let typeTitle = {
     1: 'Физическое лицо',
     2: 'Юридическое лицо'
 };
+
+var view;
 
 (function ($) {
 
@@ -41,7 +43,7 @@ let typeTitle = {
         },
 
         filterCol: function () {
-            let value = parseInt($('.filter').val());
+            let value = Number($('.filter').val());
             if (value !== 0) {
                 app.consumers.filterBy('type', { type: value });
                 app.tableView.remove();
@@ -53,11 +55,10 @@ let typeTitle = {
             app.consumers.resetFilters();
             app.tableView.remove();
             this.initCollection();
-            $(".filter").val('0');
         },
 
         showPopup: function () {
-            let view = new app.PopupView();
+            view = new app.PopupView();
             this.$el.append(view.render().el);
         },
 
