@@ -12,7 +12,6 @@ var app = app || {};
 
         render: function() {
             this.collection.each(this.renderOne);
-            console.log(this.collection);
             return this;
         },
 

@@ -15,6 +15,7 @@ var app = app || {};
 
         events: {
             "click .edit": "showPopup",
+            "click .delete": "deleteRow",
             "submit .container": "addConsumer"
         },
 
@@ -31,6 +32,11 @@ var app = app || {};
         showPopup: function () {
             view = new app.PopupView({ model: this.model });
             this.$el.append(view.render().$el);
+        },
+
+        deleteRow: function () {
+            app.consumers.remove(this.model);
+            this.remove();
         }
     });
 })(jQuery);
