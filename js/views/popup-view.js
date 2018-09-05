@@ -11,6 +11,7 @@ var app = app || {};
         },
 
         pow: function (a, b) {
+            console.log('pow');
             return 8;
         },
 

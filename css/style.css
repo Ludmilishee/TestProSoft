@@ -15,6 +15,7 @@ table, th, td {
 table {
     margin: auto;
     border: none;
+    min-width: 600px;
 }
 
 th {

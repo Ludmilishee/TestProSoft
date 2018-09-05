@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TestProSoft</title>
+    <title>Test</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
@@ -22,11 +22,11 @@
 
     <table id="consumerTable">
         <thead>
-            <tr>
-                <th>Имя</th>
-                <th>Тип</th>
-                <th>Номер</th>
-            </tr>
+        <tr>
+            <th>Имя</th>
+            <th>Тип</th>
+            <th>Номер</th>
+        </tr>
         </thead>
         <script type="text/template" id="row">
             <td class="name-row"><%= name %></td>
@@ -73,12 +73,19 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
     <script src="server-data/id-counter.js"></script>
-    <script src="js/app.js"></script>
     <script src="js/views/app-view.js"></script>
     <script src="js/views/popup-view.js"></script>
     <script src="js/views/table-view.js"></script>
     <script src="js/views/row-view.js"></script>
     <script src="js/models/consumer.js"></script>
     <script src="js/collections/consumer-list.js"></script>
+    <script src="test/test.js"></script>
+
+    <!-- в элементе с id="mocha" будут результаты тестов -->
+    <div id="mocha"></div>
+
+    <script>
+        mocha.run();
+    </script>
 </body>
 </html>

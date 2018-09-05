@@ -1,18 +1,17 @@
 /* global Backbone, jQuery, _ */
 var app = app || {};
 
-let consumerType = {
+app.consumerType = {
     1: 'Ф',
     2: 'Ю'
 };
 
-let typeTitle = {
+app.typeTitle = {
     1: 'Физическое лицо',
     2: 'Юридическое лицо'
 };
 
 (function ($) {
-
     app.AppView = Backbone.View.extend({
         el: '.content',
 
@@ -54,8 +53,8 @@ let typeTitle = {
         },
 
         showPopup: function () {
-            let view = new app.PopupView();
-            this.$el.append(view.render().el);
+            app.popupView = new app.PopupView();
+            this.$el.append(app.popupView.render().el);
         },
 
         initCollection: function () {

@@ -24,7 +24,7 @@ var app = app || {};
         },
 
         showPopup: function () {
-            view = new app.PopupView({ model: this.model });
+            let view = new app.PopupView({ model: this.model });
             this.$el.append(view.render().$el);
         },
 
