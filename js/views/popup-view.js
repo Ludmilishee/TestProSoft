@@ -10,11 +10,6 @@ var app = app || {};
             "submit .container": "addConsumer"
         },
 
-        pow: function (a, b) {
-            console.log('pow');
-            return 8;
-        },
-
         initialize: function () {},
 
         render: function () {
@@ -27,7 +22,9 @@ var app = app || {};
         },
 
         addConsumer: function(e){
-            e.preventDefault();
+            if (e) {
+                e.preventDefault();
+            }
 
             let cons;
 

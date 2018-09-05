@@ -50,6 +50,7 @@ app.typeTitle = {
             app.consumers.resetFilters();
             app.tableView.remove();
             this.initCollection();
+            $('.filter').val('0');
         },
 
         showPopup: function () {
