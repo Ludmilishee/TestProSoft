@@ -10,6 +10,10 @@ var app = app || {};
             "submit .container": "addConsumer"
         },
 
+        pow: function (a, b) {
+            return 8;
+        },
+
         initialize: function () {},
 
         render: function () {
